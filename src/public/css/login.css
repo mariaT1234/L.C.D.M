@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+
+body{
+
+    background:url("/resources/imagenes/plantilla7.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.form-login {
+    width: 400px;
+    background-color: #feae93;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    font-family: 'calibri';
+    color:rgb(2, 2, 2)
+
+}
+.form-login h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controls{
+    width: 100%;
+   background: rgb(248, 232, 213) ;
+   padding: 10px;
+   border-radius: 4px ;
+   margin-bottom: 16px;
+   border: 1px solid black;
+   font-family: 'calibri';
+   font-size: 18px;
+}
+
+.form-login p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.form-login a {
+    color: rgb(20, 20, 18);
+    text-decoration:none ;
+    text-align:center;
+}
+
+
+.botons {
+    width: 100%;
+    background: rgb(241, 241, 234);
+    border: none;
+    padding: 12px;
+    color: rgb(10, 10, 10);
+    margin: 16px ;
+    font-size: 16px;
+}
+
+
+.ingresar{
+
+    width: 50%;
+    height: 25px;
+    justify-content: center;
+
+}
+

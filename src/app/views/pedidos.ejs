@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/css/pedidos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@264&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+   
+    <header class="header">
+        <div class="bg-white">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class=" navg navbar-nav w-100 justify-content-center">
+                          <a class="nav-link active" aria-current="page" href="/admin_l">Inicio</a>
+                          
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+              </div>
+        </div>
+
+        <div class="container">
+            <table class="table table-striped table-bordered table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre y Apellido</th>
+                    <th>Teléfono</th> 
+                    <th>Capitoneado</th>
+                    <th>Modificación de diseño</th>
+                    <th>Cojines</th>
+                    <th>Brazos</th>
+                    <th>Diseño mueble</th>
+                    <th>Pago inicial</th>
+                    <th>Pago final</th>
+                    <th>Fecha Entrega</th>
+                    <th>Eliminar</th>
+                    <th>Editar</th>
+                </tr>
+
+                <% for (let i = 0; i < Pedidos.length; i++) { %>
+			
+                  <tr>
+                    <td> <%= Pedidos[i].id_producto %> </td>
+                    <td> <%= Pedidos[i].Nombre_Apellido %> </td>
+                    <td> <%= Pedidos[i].Telefono %> </td>
+                    <td> <%= Pedidos[i].capitoneado %> </td>
+                    <td> <%= Pedidos[i].modificacion_diseño %> </td>
+                    <td> <%= Pedidos[i].cojines %> </td>
+                    <td> <%= Pedidos[i].brazos %> </td>
+                    <td> <%= Pedidos[i].Diseño_mueble %> </td>
+                    <td> <%= Pedidos[i].Pago_inicial %> </td>   
+                    <td> <%= Pedidos[i].Pago_final %> </td> 
+                    <td> <%= Pedidos[i].Fecha_Entrega %> </td>
+                    <td><a href="/borrar/<%= Pedidos[i].id_producto %>" class="btn btn-danger">Eliminar</a></td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%= Pedidos[i].id_producto %>" data-bs-whatever="@getbootstrap">Editar</button></td>
+
+                  </tr>
+
+                  <div class="modal fade" id="exampleModal<%= Pedidos[i].id_producto %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Editar Pedidos</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                          <form method="POST" action="/editar/<%= Pedidos[i].id_producto %>">
+                             <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Nombre y apellido</label>
+                              <input type="text" class="form-control" id="recipient-name" name="nombre" value="<%= Pedidos[i].Nombre_Apellido %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Télefono</label>
+                              <input type="number" class="form-control" id="recipient-name" name="telefono" value="<%= Pedidos[i].Telefono %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Capitoneado</label>
+                              <input type="text" class="form-control" id="recipient-name" name="capitoneado" value="<%= Pedidos[i].capitoneado %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Modificación de diseño</label>
+                              <input type="text" class="form-control" id="recipient-name" name="modificacion_diseño" value="<%= Pedidos[i].modificacion_diseño %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Cojines</label>
+                              <input type="number" class="form-control" id="recipient-name" name="cojines" value="<%= Pedidos[i].cojines %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Brazos</label>
+                              <input type="number" class="form-control" id="recipient-name" name="brazos" value="<%= Pedidos[i].brazos %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Diseño de mueble</label>
+                              <input type="text" class="form-control" id="recipient-name" name="diseño_mueble" value="Diseño_mueble">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Pago inicial</label>
+                              <input type="number" class="form-control" id="recipient-name" name="pago_inicIal" value="<%= Pedidos[i].Pago_inicial %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Pago final</label>
+                              <input type="number" class="form-control" id="recipient-name" name="pago_final" value="<%= Pedidos[i].Pago_final %>">
+                            </div>
+                            <div class="mb-3">
+                              <label for="message-text" class="col-form-label">Fecha de entrega</label>
+                              <input type="text" class="form-control" id="recipient-name" name="fecha_entrega" value="<%= Pedidos[i].Fecha_Entrega %>">
+                            </div>
+                            <div class="mb-3">
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <input type="submit" class="btn btn-primary" value="Editar">
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+              
+                <% } %>     
+
+            </table>
+        
+        
+        </div>
+    
+    
+    
+      </header>
+
+      <div class="container-2">
+        <div class="">
+          <form action="pedidos" method="POST">
+            
+            <input type="text" class="form-control" name="Nombre_Apellido" placeholder="Nombre completo" style="margin: 3%; width: 20%;">
+            <input type="number" class="form-control" name="Telefono" placeholder="Teléfono" style="margin: 3%; width: 20%;">
+            <input type="text" class="form-control" name="capitoneado" placeholder="Capitoneado" style="margin: 3%; width: 20%;">
+            <input type="text" class="form-control" name="modificacion_diseño" placeholder="Modificación diseño" style="margin: 3%; width: 20%;">
+            <input type="number" class="form-control" name="cojines" placeholder="Cojines" style="margin: 3%; width: 20%;">
+            <input type="number" class="form-control" name="brazos" placeholder="Brazos" style="margin: 3%; width: 20%;">
+            <input type="text" class="form-control" name="Diseño_mueble" placeholder="Diseño de mueble" style="margin: 3%; width: 20%;">
+            <input type="number" class="form-control" name="Pago_inicial" placeholder="Pago inicial" style="margin: 3%; width: 20%;">
+            <input type="number" class="form-control" name="Pago_final" placeholder="Pago final" style="margin: 3%; width: 20%">
+            <input type="date" class="form-control" name="Fecha_Entrega" placeholder="Fecha de entrega" style="margin: 3%; width: 20%;">
+            <input type="submit" class="btn btn-primary"  value="Agregar" >
+          </form>
+    
+        </div>
+    
+       </div>
+        
+    
+    
+       <script
+       src="https://code.jquery.com/jquery-3.6.0.min.js"
+       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+       crossorigin="anonymous">
+      </script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

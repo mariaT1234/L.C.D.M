@@ -1,0 +1,21 @@
+.navg a{
+    color: black!important; 
+    font-family: 'Karla', sans-serif;
+    font-size: 23px;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.navg a:hover{
+    background-color: #ffcdbcc5;
+    
+}
+
+body{
+
+    background:url("/resources/imagenes/plantilla7.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+

@@ -1,0 +1,59 @@
+.header{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("/resources/imagenes/plantilla7.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header:before{
+    content: '';
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bg-white{
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    .bg-white{
+        background-color: transparent!important;
+    }
+}
+
+.navg a{
+    color: black!important; 
+    font-family: 'Karla', sans-serif;
+    font-size: 23px;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.navg a:hover{
+    background-color: #ffcdbcc5;
+    
+}
+
+.text-header{
+    min-height: 100vh;
+    color: black;
+    font-family: 'Karla', sans-serif;
+    
+}
+
+.text-header h2{
+    font-family: 'Karla', sans-serif;
+}
+
+.text-header p{
+    font-size: 1em;
+}
