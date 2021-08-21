@@ -1,0 +1,23 @@
+body{
+    background-image: url("./img/plantilla7.jpg");
+    background-attachment: fixed;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.uno{
+    font-size: 15px; 
+    padding-top: 50px;
+    
+}
+
+.dos{
+    font-size: 15px; 
+    padding-top: 50px;
+    
+}
+
+img{
+    width: 3cm;
+    height: 4cm;
+}
+
